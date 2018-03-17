@@ -6,11 +6,12 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='styleshet' type='text/css' href='assets/css/style.css'>
         <script type='text/javascript' src='assets/javascript/app.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <h1>Psychedelic Music Trivia!</h1>
 
-        <div id='changeTime'> <!-- Need to put all content that changes after time is up here -->
+        <div id='mainDiv'> <!-- Need to put all content that changes after time is up here -->
             <h2>Time Remaining: <span id='time'>30</span> Seconds</h2>
 
             <h2>Which of the following albums released in 1967?</h2>
@@ -35,6 +36,14 @@
                     <input type='radio' name='q3' value='right'> Jimi Hendrix
                     <input type='radio' name='q3' value='wrong'> The Moody Blues
                     <input type='radio' name='q3' value='wrong'> Joni Mitchell
-                </form>  
+                </form> 
+        </div>
+
+        <div id='scoreDiv' hidden>
+            <h2>Time's Up!</h2>
+            <h3>Correct Answers: <span id='correct'></span></h3>
+            <h3>Incorrect Answers: <span id='incorrect'></span></h3>
+            <h3>Unanswered: <span id='unanswered'></span></h3>
+        </div>
     </body>
 </html>

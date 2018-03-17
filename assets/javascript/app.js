@@ -22,13 +22,31 @@ var timer = setInterval(function() {
     timeRem--;
     document.getElementById('time').innerHTML = timeRem;
 }, '1000');
-clearInterval(timer);
 
 setTimeout(function() {
     var a1 = document.getElementById('form1').q1.value;
     var a2 = document.getElementById('form2').q2.value;
     var a3 = document.getElementById('form3').q3.value;
     var answers = [a1, a2, a3];
-    console.log(answers);
     clearInterval(timer);
-},'30000');
+
+    $('#mainDiv').hide();
+    var correct = 0;
+    var incorrect = 0;
+    var unanswered = 0;
+    for(var i=0; i<answers.length; i++) {
+        if(answers[i]==='right') {
+            correct++;
+        }
+        else if(answers[i]==='wrong') {
+            incorrect++;
+        }
+        else {
+            unanswered++;
+        }
+    }
+    document.getElementById('correct').innerHTML = correct;
+    document.getElementById('incorrect').innerHTML = incorrect;
+    document.getElementById('unanswered').innerHTML = unanswered;
+    $('#scoreDiv').show();
+},'31000');
